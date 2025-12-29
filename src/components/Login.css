@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F0F4F8;
+}
+
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F0F4F8;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.login-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 500px;
+}
+
+/* Painel Esquerdo - Branding */
+.login-left-panel {
+  background-color: #2B6CB0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.login-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.login-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.login-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.login-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.login-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.login-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.login-project-link {
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+
+}
+
+
+/* Painel Direito - Formulário */
+.login-right-panel {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #2D3748;
+  background-color: #FFFFFF;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1A73E8;
+}
+
+.form-group input::placeholder {
+  color: #A0AEC0;
+}
+
+.login-submit-button {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #1A73E8;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+}
+
+.login-submit-button:hover {
+  background-color: #1557B0;
+}
+
+.login-submit-button:active {
+  background-color: #1248A0;
+}
+
+.login-form-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.login-form-footer p {
+  font-size: 14px;
+  color: #4A5568;
+  margin: 0;
+}
+
+.register-link {
+  color: #1A73E8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #1557B0;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .login-card {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .login-left-panel {
+    padding: 40px 30px;
+    min-height: 300px;
+  }
+
+  .login-left-content {
+    gap: 30px;
+  }
+
+  .login-main-title {
+    font-size: 28px;
+  }
+
+  .login-subtitle {
+    font-size: 16px;
+  }
+
+  .login-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .login-right-panel {
+    padding: 40px 30px;
+  }
+
+  .login-form-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page-container {
+    padding: 10px;
+  }
+
+  .login-card {
+    border-radius: 8px;
+    min-height: auto;
+  }
+
+  .login-left-panel {
+    padding: 30px 20px;
+    min-height: 250px;
+  }
+
+  .login-main-title {
+    font-size: 24px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+
+  .login-icons-container {
+    gap: 15px;
+  }
+
+  .login-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .login-right-panel {
+    padding: 30px 20px;
+  }
+
+  .login-form-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .form-group input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .login-submit-button {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
