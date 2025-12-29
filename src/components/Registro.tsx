@@ -1,27 +1,28 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './Registro.css';
 import oneLogo from '../assets/img/one-logo.webp';
 import aluraLogo from '../assets/img/alura-logo.png';
 import noCountryLogo from '../assets/img/no-country-logo.webp';
 
-const Login = () => {
+const Registro = () => {
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    /* Aqui entrará a lógica de autenticação */
-    console.log('Login:', { email, senha });
+    /* Aqui entrará a lógica de registro */
+    console.log('Registro:', { nome, email, senha });
   };
 
   return (
-    <div className="login-page-container">
-      <div className="login-card">
-        <div className="login-left-panel">
-          <div className="login-left-content">
-            <h1 className="login-main-title">Hackathon ONE - G8</h1>
-            <p className="login-subtitle">Projeto: Sentiment API</p>
+    <div className="registro-page-container">
+      <div className="registro-card">
+        <div className="registro-left-panel">
+          <div className="registro-left-content">
+            <h1 className="registro-main-title">Hackathon ONE - G8</h1>
+            <p className="registro-subtitle">Projeto: Sentiment API</p>
             
             <div className="login-icons-container">
               <div className="login-icon-wrapper">
@@ -35,17 +36,28 @@ const Login = () => {
               </div>
             </div>
 
-            <a href="/projeto" className="login-project-link">
+            <a href="/projeto" className="registro-project-link">
               Conheça o projeto
             </a>
           </div>
         </div>
 
-        <div className="login-right-panel">
-          <div className="login-form-container">
-            <h2 className="login-form-title">Login</h2>
+        <div className="registro-right-panel">
+          <div className="registro-form-container">
+            <h2 className="registro-form-title">Registrar</h2>
 
-            <form onSubmit={handleSubmit} className="login-form">
+            <form onSubmit={handleSubmit} className="registro-form">
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="nome"
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  placeholder="Nome"
+                  required
+                />
+              </div>
+
               <div className="form-group">
                 <input
                   type="email"
@@ -68,16 +80,16 @@ const Login = () => {
                 />
               </div>
 
-              <button type="submit" className="login-submit-button">
-                Entrar
+              <button type="submit" className="registro-submit-button">
+                Cadastrar
               </button>
             </form>
 
-            <div className="login-form-footer">
+            <div className="registro-form-footer">
               <p>
-                Não possui conta?{' '}
-                <Link to="/registro" className="register-link">
-                  Registrar
+                Já possui conta?{' '}
+                <Link to="/login" className="login-link">
+                  Login
                 </Link>
               </p>
             </div>
@@ -88,4 +100,5 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registro;
+
